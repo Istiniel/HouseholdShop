@@ -62,18 +62,18 @@ button {
 
 //gray
 .black {
-  background-color: $primary-black2;
-  color: $primary-white2;
+  background-color: $primary-black;
+  color: $primary-white;
 
   @include onHover() {
-    color: $primary-white2;
-    background-color: $primary-darkgray2;
+    color: $primary-white;
+    background-color: $primary-gray;
   }
 }
 
 .black.outlined {
   background-color: rgba(0, 0, 0, 0);
-  outline: 2px solid $primary-black2;
+  outline: 2px solid $primary-black;
   outline-offset: -2px;
   filter: none;
 
@@ -81,8 +81,8 @@ button {
 
   @include onHover() {
     outline-color: transparent;
-    color: $primary-white2;
-    background-color: $primary-darkgray2;
+    color: $primary-white;
+    background-color: $primary-gray;
   }
 }
 

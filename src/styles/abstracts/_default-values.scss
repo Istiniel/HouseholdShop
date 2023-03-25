@@ -1,21 +1,17 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
-
 // fonts
 $font-serif: Arial, 'Helvetica Neue Light', sans-serif !default;
-$font-sans: 'Inter', 'Times New Roman', Times, serif !default;
+$font-sans: Georgia, 'Times New Roman', Times, serif !default;
 $font-weight-normal: 400;
 $font-weight-semibold: 500;
 $font-weight-bold: 700;
 
 // Colors
-$primary-color-1: #ffffff;
-$primary-color-2: #ededed;
-$primary-color-3: #ffc85e;
-$accent-color-1: #f3a50d;
-$accent-color-2: rgba(188, 166, 122, 0.2);
-$accent-color-3: #1fd85d;
+$primary-color-1: #d4f4ff;
+$primary-color-2: #7271aa;
+$primary-color-3: #7271aa;
+$accent-color-1: #334a52;
+$accent-color-2: #e6f4f1;
+$accent-color-3: #e6f4f1;
 
 // Explicitly set colors
 $primary-green: #1fd85d;
@@ -27,6 +23,8 @@ $primary-blue: #39acfd;
 $primary-black: #111111;
 $primary-white: #ffffff;
 $primary-red: rgba(188, 166, 122, 0.2);
+
+$accent-green: #66c05d;
 
 //breakpoints
 $break-xs: 320px;
