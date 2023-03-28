@@ -1,9 +1,9 @@
 import React from 'react';
-import HeaderLink, { HeaderLinkType } from '../NavItem';
+import HeaderLink, { NavItemProps } from '../NavItem';
 import st from './NavList.module.scss';
 
 type NavListProps = {
-  navLinks: HeaderLinkType[];
+  navLinks: NavItemProps[];
 };
 
 const NavList: React.FC<NavListProps> = ({ navLinks }) => {

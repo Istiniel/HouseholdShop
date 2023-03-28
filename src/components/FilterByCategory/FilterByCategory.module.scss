@@ -1,0 +1,24 @@
+.container {
+  @extend %flexcolumn;
+  gap: 1rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+
+  h2 {
+    @include font(1.6rem, 150%, 500);
+  }
+}
+
+.tag {
+  text-transform: capitalize;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.4rem, 150%, 400);
+
+  @include onHover() {
+    cursor: pointer;
+    color: $primary-yellow;
+  }
+}

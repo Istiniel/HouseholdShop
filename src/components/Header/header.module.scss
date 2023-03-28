@@ -1,5 +1,66 @@
-.header {
-  background-color: $primary-black;
+.wrapper {
+  max-width: $max-width;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include maxQ(small) {
+    padding: 0 10px;
+  }
+}
+
+.headerTop {
+  border-bottom: 1px solid $primary-gray;
+}
+
+.headerBottom {
+  border-bottom: 1px solid $primary-gray;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomContainer {
+  height: 10.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .contactItem:first-child {
+    padding-right: 2rem;
+    border-right: 2px dotted $primary-gray;
+  }
+
+  .contactItem:last-child {
+    padding-left: 2rem;
+  }
+}
+
+.contactItem {
+  font-family: $font-sans;
+  color: $primary-black;
+  white-space: nowrap;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  & h3 {
+    @include font(1.4rem, 130%, 600);
+  }
+
+  & p {
+    @include font(1.2rem, 130%, 300);
+  }
 }
 
 .container {
@@ -18,4 +79,108 @@
     padding-bottom: 2rem;
     flex-direction: column;
   }
+}
+
+.callback {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.4rem;
+
+  padding-right: 2.5rem;
+  border-right: 2px dotted $primary-gray;
+}
+
+.callbackInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  white-space: nowrap;
+
+  h3 {
+    @include font(1.4rem, 150%, 600);
+  }
+
+  p {
+    @include font(1.2rem, 150%, 300);
+  }
+
+  a {
+    @include font(1rem, 150%, 400);
+    text-decoration: underline;
+  }
+}
+
+.interactionBlock {
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.cart {
+  padding-left: 2.5rem;
+  border-left: 2px dotted $primary-gray;
+
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.cartInfo {
+  @extend %flexcolumn;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  white-space: nowrap;
+
+  p {
+    @include font(1.2rem, 150%, 300);
+  }
+
+  h3 {
+    @include font(1.4rem, 150%, 600);
+  }
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  background-color: $primary-gray;
+
+  padding: 2rem;
+  max-width: 26.3rem;
+  border-radius: 2.6rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.2rem, 150%, 400);
+}
+
+.submit-button {
+  display: block;
+  width: 3.9rem;
+  height: 3.9rem;
+  border-radius: 100%;
+
+  background-color: $primary-yellow;
+  background-image: url('../../assets/images/search_input.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transform: translate(-1rem, 1rem);
 }

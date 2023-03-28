@@ -1,0 +1,44 @@
+.container {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  gap: 1.6rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.6rem, 150%, 500);
+}
+
+.form {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.inputContainer {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  input {
+    display: inline-block;
+
+    @include onHover() {
+      cursor: pointer;
+    }
+  }
+
+  label {
+    flex: 1 0 auto;
+    display: inline-block;
+    padding-left: 1rem;
+    @include font(1.4rem, 150%, 400);
+
+    span {
+      @include font(1rem, 150%, 400);
+    }
+
+    @include onHover() {
+      cursor: pointer;
+    }
+  }
+}

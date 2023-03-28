@@ -1,0 +1,23 @@
+.container {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  gap: 1.6rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.4rem, 150%, 300);
+}
+
+.priceRange {
+  input {
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    width: 10rem;
+
+    border-radius: 100rem;
+    padding: 0.4rem 1.4rem;
+    text-align: center;
+
+    color: $primary-darkgray;
+    @include font(1.2rem, 1.5rem, 300);
+  }
+}

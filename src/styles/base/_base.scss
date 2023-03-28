@@ -36,3 +36,9 @@
 .overflow-hidden {
   overflow: hidden;
 }
+
+body {
+  position: relative;
+
+  min-height: 150vh;
+}

@@ -1,0 +1,13 @@
+.title {
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.6rem, 150%, 500);
+  text-transform: uppercase;
+}
+
+.container {
+  margin-top: 2rem;
+
+  @extend %flexcolumn;
+  gap: 4rem;
+}

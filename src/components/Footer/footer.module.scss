@@ -1,1 +1,152 @@
-@use '../abstracts/' as *;
+.footer {
+  background-color: $primary-darkgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(345deg)
+    brightness(103%) contrast(102%);
+}
+
+.container {
+  padding-top: 7.1rem;
+  padding-bottom: 7.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.subsribe {
+  max-width: 32rem;
+  @extend %flexcolumn;
+  align-items: flex-start;
+  gap: 4.5rem;
+
+  font-family: $font-sans;
+  color: $primary-white;
+
+  p {
+    @include font(1.6rem, 150%, 400);
+    white-space: pre-line;
+  }
+
+  h4 {
+    @include font(1.2rem, 150%, 400);
+  }
+
+  .about {
+    @extend %flexcolumn;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .subsribeEmail {
+    @extend %flexcolumn;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+}
+
+.menu,
+.categories {
+  @extend %flexcolumn;
+  align-items: flex-start;
+  gap: 2rem;
+
+  font-family: $font-sans;
+  color: $primary-white;
+  white-space: nowrap;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    @include font(2rem, 150%, 600);
+  }
+
+  a {
+    @include font(1.4rem, 150%, 400);
+  }
+}
+
+.pricelist {
+  @extend %flexcolumn;
+  align-items: flex-start;
+  gap: 2rem;
+
+  font-family: $font-sans;
+  color: $primary-white;
+  white-space: nowrap;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    @include font(2rem, 150%, 600);
+  }
+
+  h4 {
+    @include font(1.4rem, 150%, 400);
+  }
+}
+
+.messengers {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contacts {
+  @extend %flexcolumn;
+  align-items: flex-start;
+  gap: 2rem;
+
+  font-family: $font-sans;
+  color: $primary-white;
+  white-space: nowrap;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    @include font(2rem, 150%, 600);
+  }
+
+  .phone {
+    @include font(1.4rem, 150%, 600);
+  }
+
+  .workHours {
+    @include font(1.2rem, 150%, 300);
+  }
+
+  .callback {
+    @include font(1rem, 150%, 400);
+  }
+
+  .email {
+    @include font(1.4rem, 1.8rem, 600);
+  }
+
+  .contactsDetail {
+    @include font(1.2rem, 130%, 300);
+  }
+}
+
+.phoneBlock {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.emailBlock {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}

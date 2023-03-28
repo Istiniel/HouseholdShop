@@ -1,0 +1,62 @@
+.container {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 29rem;
+  height: 49rem;
+  padding: 3rem 1.5rem;
+
+  background: #ffffff;
+  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+
+  font-family: $font-sans;
+  color: $primary-black;
+
+  @include onHover() {
+    cursor: pointer;
+  }
+}
+
+.productImage {
+  height: 20rem;
+  align-self: center;
+}
+
+.measure {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @include font(1.2rem, 130%, 400);
+}
+
+.productName {
+  @include font(1.6rem, 130%, 700);
+
+  span {
+    @include font(1.6rem, 130%, 500);
+  }
+}
+
+.barcode,
+.producer,
+.brand {
+  @include font(1.4rem, 150%, 300);
+
+  span {
+    @include font(1.4rem, 150%, 500);
+  }
+}
+
+.toCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    @include font(1.6rem, 130%, 800);
+  }
+}

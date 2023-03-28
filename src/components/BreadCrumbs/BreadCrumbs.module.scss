@@ -1,0 +1,32 @@
+.breadCrumbs {
+  background-color: $primary-white;
+}
+
+.container {
+  padding: 4.5rem 0 5rem 0;
+  display: flex;
+  align-items: center;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.4rem, 120%, 300);
+}
+
+.crumb {
+  display: inline-block;
+  padding: 0 1rem;
+  border-right: 1px dotted $primary-gray;
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  @include onHover() {
+    color: $primary-yellow;
+  }
+}

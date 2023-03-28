@@ -6,7 +6,7 @@ const NotFound = () => {
     <main className={st.main}>
       <div className="wrapper">
         <div className={st.container}>
-          <h2 className={st.nomatches__title}>{'No matches'}</h2>
+          <h2 className={st.nomatches__title}>{'Страница не найдена!'}</h2>
         </div>
       </div>
     </main>

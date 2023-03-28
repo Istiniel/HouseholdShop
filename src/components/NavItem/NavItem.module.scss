@@ -1,43 +1,31 @@
 .navItem {
-  @extend %transition;
+  padding: 1rem 0;
 
-  @include onHover() {
-    background-color: $primary-red;
-    cursor: pointer;
-
+  &:last-of-type {
     .navLink {
-      color: $primary-black;
+      padding-right: 0;
+      border-right: none;
     }
   }
 
-  @include maxQ(small) {
-    @include onHover() {
-      background-color: transparent;
-      .navLink {
-        color: $primary-white;
-      }
+  @extend %transition;
+
+  @include onHover() {
+    cursor: pointer;
+
+    .navLink {
+      color: $primary-orange;
     }
   }
 }
 
 .navLink {
   display: inline-block;
-  padding: 3rem 4rem;
+  padding: 1rem 3rem;
 
-  color: $primary-red;
-  font-family: $font-serif;
-  @include font(2.5rem, 140%, 400);
-  letter-spacing: 0.06em;
+  color: $primary-darkgray;
+  font-family: $font-sans;
+  @include font(1.4rem, 150%, 400);
 
-  @include maxQ(medium) {
-    font-size: 1.5rem;
-  }
-
-  @include maxQ(small) {
-    flex: 1 0 auto;
-  }
-}
-
-.navLink.active {
-  text-decoration: underline;
+  border-right: 2px dotted $primary-gray;
 }

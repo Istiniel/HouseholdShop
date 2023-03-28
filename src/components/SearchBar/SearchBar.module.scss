@@ -1,0 +1,35 @@
+.search-form {
+  width: max-content;
+  display: inline-block;
+  position: relative;
+}
+
+.search-input {
+  background-color: $primary-gray;
+
+  padding: 2rem;
+  max-width: 26.3rem;
+  border-radius: 3.6rem;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.2rem, 150%, 400);
+}
+
+.submit-button {
+  display: block;
+  width: 3.9rem;
+  height: 3.9rem;
+  border-radius: 100%;
+
+  background-color: $primary-yellow;
+  background-image: url('../../assets/images/search_input.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transform: translate(-1rem, 1rem);
+}

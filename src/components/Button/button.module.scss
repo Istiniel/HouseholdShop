@@ -1,13 +1,15 @@
-button {
-  width: 15rem;
+.button {
   border-radius: 10rem;
 
-  padding: 1.5rem 4.5rem;
-  max-width: fit-content;
+  padding: 2.1rem 5.4rem;
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 
-  font-family: $font-serif;
-  @include font(1.7rem, 130%, 400);
-  letter-spacing: 0.06em;
+  font-family: $font-sans;
+  @include font(1.4rem, 1.7px, 700);
+  white-space: nowrap;
 
   transition: all ease-out 0.2s;
 
@@ -60,7 +62,7 @@ button {
   }
 }
 
-//gray
+//black
 .black {
   background-color: $primary-black;
   color: $primary-white;
@@ -86,8 +88,34 @@ button {
   }
 }
 
+//black
+.orange {
+  background-color: $primary-yellow;
+  color: $primary-white;
+
+  @include onHover() {
+    color: $primary-white;
+    background-color: $primary-orange;
+  }
+}
+
+.orange.outlined {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $primary-yellow;
+  outline-offset: -2px;
+  filter: none;
+
+  color: $primary-black;
+
+  @include onHover() {
+    outline-color: transparent;
+    color: $primary-white;
+    background-color: $primary-yellow;
+  }
+}
+
 // if disabled
-button:disabled {
+.button:disabled {
   color: #cdcdcd !important;
   outline-color: #cdcdcd !important;
 
