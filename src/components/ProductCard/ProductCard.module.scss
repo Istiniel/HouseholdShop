@@ -1,27 +1,53 @@
 .container {
+  height: 60rem;
+
+  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+
   @extend %flexcolumn;
   justify-content: space-between;
   align-items: flex-start;
 
-  width: 29rem;
-  height: 49rem;
-  padding: 3rem 1.5rem;
-
-  background: #ffffff;
-  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
-
-  font-family: $font-sans;
-  color: $primary-black;
-
   @include onHover() {
     cursor: pointer;
+    .card {
+      transition: all ease-out 0.3s;
+
+      background: rgba($color: $primary-orange, $alpha: 0.1);
+    }
   }
 }
 
+.card {
+  flex: 1 0 auto;
+  @extend %flexcolumn;
+  justify-content: space-between;
+  align-items: flex-start;
+  object-fit: cover;
+
+  padding: 3rem 1.5rem;
+  padding-top: 1.5rem;
+
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+
+  font-family: $font-sans;
+  color: $primary-black;
+}
+
+.thumb {
+  max-height: 20rem;
+
+  width: 100%;
+  background-color: #ffffff;
+  flex: 1 0 auto;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
 .productImage {
-  height: 20rem;
-  align-self: center;
+  height: 17rem;
 }
 
 .measure {
@@ -59,4 +85,33 @@
   h3 {
     @include font(1.6rem, 130%, 800);
   }
+}
+
+.tags {
+  min-height: 6.2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @include font(1.2rem, 130%, 400);
+
+  h3 {
+    background-color: $primary-gray;
+    padding: 0.5rem 1rem;
+    border-radius: 100rem;
+  }
+}
+
+.itemCount {
+  @include font(1.2rem, 130%, 500);
+
+  color: $primary-darkgray;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+
+  transform: translateY(125%);
 }

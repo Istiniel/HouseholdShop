@@ -9,5 +9,6 @@
   margin-top: 2rem;
 
   @extend %flexcolumn;
+  min-width: 28rem;
   gap: 4rem;
 }

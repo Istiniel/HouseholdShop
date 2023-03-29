@@ -3,8 +3,8 @@
 }
 
 .content {
+  padding-bottom: 2rem;
   display: flex;
-  align-items: flex-start;
   gap: 10.8rem;
 }
 
@@ -64,4 +64,8 @@
   @include onHover() {
     background-color: $primary-yellow;
   }
+}
+
+.active {
+  background-color: $primary-yellow;
 }

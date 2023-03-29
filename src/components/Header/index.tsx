@@ -83,9 +83,9 @@ const Header: React.FC = () => {
                 Прайс-лист <img src={pricelistLogo} alt="card__logo" />
               </Button>
               <div className={st.cart}>
-                <a href="#">
+                <Link to="/cart">
                   <img src={cartImage} alt="card_img" />
-                </a>
+                </Link>
                 <div className={st.cartInfo}>
                   <p>Корзина</p>
                   <h3>{summaryPrice + '₸'}</h3>

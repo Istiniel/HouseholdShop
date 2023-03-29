@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Istiniel.github.io/RSSchool-React/",
+  "homepage": "https://github.com/Istiniel/HouseholdShop",
   "scripts": {
     "dev": "npm run lint && vite",
     "build": "npm run lint && tsc --noEmit && vite build --base=./",

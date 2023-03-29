@@ -9,6 +9,8 @@ import './styles/App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { store } from './redux/store';
 import Products from './pages/Products/index';
+import ItemPage from './pages/ItemPage/index';
+import Cart from './pages/Cart/index';
 
 function App() {
   return (
@@ -18,8 +20,8 @@ function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Main />} />
             <Route path="products" element={<Products />} />
-            <Route path="products/:productId" element={<NotFound />} />
-            <Route path="cart" element={<NotFound />} />
+            <Route path="products/:productURL" element={<ItemPage />} />
+            <Route path="cart" element={<Cart />} />
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate to="/404" replace />} />
           </Route>

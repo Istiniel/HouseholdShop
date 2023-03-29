@@ -1,0 +1,23 @@
+.container {
+  width: 11.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: $font-sans;
+  color: $primary-black;
+  @include font(1.4rem, 130%, 500);
+}
+
+.decrease,
+.increase {
+  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+
+  width: 3.4rem;
+  height: 2.3rem;
+  border-radius: 100rem;
+
+  @include onHover() {
+    background: $primary-yellow;
+  }
+}

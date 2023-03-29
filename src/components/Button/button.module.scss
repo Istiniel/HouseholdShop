@@ -1,5 +1,6 @@
 .button {
-  border-radius: 10rem;
+  position: relative;
+  border-radius: 100rem;
 
   padding: 2.1rem 5.4rem;
   max-width: max-content;
@@ -8,7 +9,7 @@
   gap: 1.2rem;
 
   font-family: $font-sans;
-  @include font(1.4rem, 1.7px, 700);
+  @include font(1.4rem, 1.7rem, 700);
   white-space: nowrap;
 
   transition: all ease-out 0.2s;

@@ -1,0 +1,65 @@
+.container {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 2px dotted $primary-gray;
+}
+
+.thumbContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28.1rem;
+}
+
+.thumb {
+  height: 19.1rem;
+}
+
+.description {
+  @extend %flexcolumn;
+  justify-content: space-between;
+  gap: 1rem;
+
+  max-width: 48rem;
+}
+
+.measure {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @include font(1.2rem, 130%, 400);
+}
+
+.productName {
+  @include font(3rem, 3.6rem, 700);
+}
+
+.productDescription {
+  @include font(1.2rem, 150%, 300);
+}
+
+.price {
+  width: 20rem;
+  @include font(3rem, 130%, 700);
+}
+
+.removeProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  background-color: $primary-yellow;
+
+  width: 6rem;
+  height: 6rem;
+
+  transition: all ease-in-out 0.3s;
+
+  @include onHover() {
+    background-color: $primary-gray;
+  }
+}

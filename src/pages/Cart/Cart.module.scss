@@ -1,0 +1,34 @@
+.cart {
+  flex: 1 0 auto;
+
+  font-family: $font-sans;
+  color: $primary-black;
+}
+
+.container {
+  padding-bottom: 5rem;
+}
+
+.title {
+  padding-bottom: 5rem;
+  border-bottom: 2px dotted $primary-gray;
+
+  @include font(4rem, 120%, 500);
+}
+
+.purchaseBlock {
+  margin-top: 6rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalPrice {
+  @include font(3rem, 130%, 700);
+}
+
+.gratitudeMessage {
+  text-align: center;
+  @include font(3rem, 130%, 700);
+}

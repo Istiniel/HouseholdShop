@@ -1,0 +1,30 @@
+.cards {
+  padding-bottom: 5rem;
+  @extend %flexcolumn;
+  gap: 5rem;
+  align-items: center;
+
+  min-height: 134rem;
+}
+
+.container {
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(29rem, 1fr));
+  row-gap: 2.1rem;
+  column-gap: 2.1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.prev,
+.next {
+  @include onHover() {
+    cursor: pointer;
+  }
+}

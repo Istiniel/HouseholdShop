@@ -1,12 +1,14 @@
 import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useParams } from 'react-router-dom';
 import st from './BreadCrumbs.module.scss';
 
 const BreadCrumbs = () => {
   const location = useLocation();
+  const { productURL } = useParams();
 
   const links = {
     products: 'Каталог',
+    cart: 'Корзина',
   };
 
   let currentLink = '';
@@ -17,7 +19,7 @@ const BreadCrumbs = () => {
       currentLink += `/${crumb}`;
       return (
         <Link to={currentLink} className={st.crumb} key={crumb}>
-          {crumb in links ? links[crumb as keyof typeof links] : ''}
+          {crumb in links ? links[crumb as keyof typeof links] : productURL}
         </Link>
       );
     });

@@ -1,6 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import st from './Dropdown.module.scss';
 import { useToggleDropDown } from '../../hooks/useToggleDropDown';
+import {
+  sortByName,
+  sortByPrice,
+  sortByDescendingPrice,
+} from '../../redux/features/goodsList/goodsSlice';
+import { useAppDispatch } from './../../redux/hooks';
 
 interface DropDownProps {
   type: 'hover' | 'click';
@@ -11,6 +17,30 @@ interface DropDownProps {
 const DropDown: React.FC<DropDownProps> = ({ options, type }) => {
   const [selectedOption, setSelectedOption] = useState<(typeof options)[number]>(options[0]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    switch (selectedOption.toLowerCase()) {
+      case 'название':
+        dispatch(sortByName());
+        break;
+
+      case 'цена':
+        dispatch(sortByPrice());
+        break;
+
+      case 'по убыванию':
+        dispatch(sortByDescendingPrice());
+        break;
+
+      case 'по возрастанию':
+        dispatch(sortByPrice());
+        break;
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedOption]);
 
   const dropContent = useRef<HTMLDivElement>(null);
 

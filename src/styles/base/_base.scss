@@ -37,8 +37,10 @@
   overflow: hidden;
 }
 
-body {
-  position: relative;
-
+#root {
   min-height: 150vh;
+  margin: 0;
+
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
 }
