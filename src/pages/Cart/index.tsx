@@ -17,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [isPurchased, setIsPurchased]);
+  }, [isPurchased, setIsPurchased, isEmpty]);
 
   useEffect(() => {
     if (cartContent.length > 0) {

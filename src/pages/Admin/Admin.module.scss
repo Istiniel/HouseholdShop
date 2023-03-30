@@ -1,0 +1,81 @@
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.changeButton,
+.removeButton,
+.createButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  background-color: $primary-yellow;
+
+  width: 4rem;
+  height: 4rem;
+
+  transition: all ease-in-out 0.3s;
+
+  @include onHover() {
+    background-color: $primary-darkgray;
+  }
+}
+
+.removeButton {
+  background-color: tomato;
+}
+
+.createButton {
+  background-color: #1fd85d;
+}
+
+.icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(69deg)
+    brightness(106%) contrast(101%);
+  width: 2rem;
+  height: 2rem;
+}
+
+.container {
+  padding: 2rem 0 5rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(10, max-content);
+  grid-auto-flow: column;
+  justify-items: start;
+  row-gap: 2rem;
+  column-gap: 2rem;
+
+  @include maxQ(medium) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+  background-color: rgb(245, 245, 245);
+  border-radius: 1rem;
+
+  transition: background-color ease-in-out 0.3s;
+}
+
+.itemDescription {
+  font-family: $font-sans;
+  color: $primary-black;
+
+  @include font(1.2rem, 130%, 400);
+  white-space: pre-line;
+
+  span {
+    font-weight: 600;
+  }
+}

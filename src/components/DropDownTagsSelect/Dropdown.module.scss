@@ -8,11 +8,12 @@
   width: 15rem;
   min-height: 3.6rem;
   padding: 0 1.5rem;
+  padding-left: 0;
   border-radius: 0.3rem;
 
   font-family: $font-sans;
   color: $primary-black;
-  @include font(1.2rem, 80%, $font-weight-semibold);
+  @include font(1.2rem, 130%, $font-weight-semibold);
   letter-spacing: 0.1rem;
   vertical-align: middle;
 
@@ -35,7 +36,10 @@
 }
 
 .dropDown__options {
+  max-height: 25rem;
+  overflow-y: scroll;
   position: absolute;
+  transform: translateY(-115%);
   z-index: 100;
   padding: 0.8rem 0;
   background-color: rgb(247, 247, 247);

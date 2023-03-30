@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 import { GoodsType } from '../../../API/API';
 
@@ -15,6 +15,18 @@ const initialState: CartState = {
   goods: [],
   summary: 0,
 };
+
+export const fetchCartFromLocalStorage = createAsyncThunk(
+  'cart/fetchCartFromLocalStorage',
+  async () => {
+    const cart = localStorage.getItem('cart');
+    const summary = localStorage.getItem('summary');
+
+    if (cart && summary) {
+      return [JSON.parse(cart) as CartItem[], +summary];
+    }
+  }
+);
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -77,6 +89,16 @@ export const cartSlice = createSlice({
       state.summary = 0;
     },
   },
+
+  extraReducers: (builder) => {
+    builder.addCase(fetchCartFromLocalStorage.fulfilled, (state, action) => {
+      if (action.payload) {
+        const [goods, summary] = action.payload;
+        state.goods = goods as CartItem[];
+        state.summary = summary as number;
+      }
+    });
+  },
 });
 
 export const { deleteItemFromCart, addItemToCart, increaseCount, decreaseCount, clearCart } =
@@ -85,4 +107,3 @@ export default cartSlice.reducer;
 
 export const selectCartContent = (state: RootState) => state.cart.goods;
 export const selectSummary = (state: RootState) => state.cart.summary;
-// export const selectCart = (state: RootState, id: number) => state.cart.summary;

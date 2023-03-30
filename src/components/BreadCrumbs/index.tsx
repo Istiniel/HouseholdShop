@@ -9,6 +9,7 @@ const BreadCrumbs = () => {
   const links = {
     products: 'Каталог',
     cart: 'Корзина',
+    admin: 'Управление',
   };
 
   let currentLink = '';

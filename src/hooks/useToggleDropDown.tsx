@@ -14,6 +14,7 @@ export const useToggleDropDown = (
     });
     return () => {
       document.removeEventListener('click', (e) => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         if (!dropContent.current?.contains(e.target as Node)) setIsOpen(false);
       });
     };

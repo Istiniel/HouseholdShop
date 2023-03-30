@@ -27,7 +27,9 @@ const initialState: GoodsListState = {
 export const fetchGoods = createAsyncThunk('goodsList/fetchGoods', async () => {
   const goods = localStorage.getItem('goods');
   if (goods) {
-    return JSON.parse(goods) as GoodsType[];
+    if (JSON.parse(goods).length > 0) {
+      return JSON.parse(goods) as GoodsType[];
+    }
   }
 
   const response = await fetchGoodsList();
@@ -39,8 +41,21 @@ export const goodsListSlice = createSlice({
   name: 'goodsList',
   initialState,
   reducers: {
+    addItem: (state, action: PayloadAction<GoodsType>) => {
+      const existedProduct = state.sortedGoods.filter((item) => item.id === action.payload.id)[0];
+
+      if (existedProduct) {
+        state.sortedGoods = state.sortedGoods.map((item) =>
+          item.id === action.payload.id ? action.payload : item
+        );
+        return;
+      }
+
+      state.sortedGoods.push(action.payload);
+    },
+
     deleteItem: (state, action: PayloadAction<number | string>) => {
-      state.goods = state.goods.filter((item) => {
+      state.sortedGoods = state.sortedGoods.filter((item) => {
         return item.id !== action.payload;
       });
     },
@@ -107,6 +122,7 @@ export const {
   sortByDescendingPrice,
   filterByPriceRange,
   filterByProducers,
+  addItem,
 } = goodsListSlice.actions;
 export default goodsListSlice.reducer;
 

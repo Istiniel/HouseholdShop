@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchGoods, selectGoods } from '../../redux/features/goodsList/goodsSlice';
+import { fetchGoods, selectFilteredState } from '../../redux/features/goodsList/goodsSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 import st from './ItemPage.module.scss';
@@ -21,7 +21,7 @@ const ItemPage = () => {
 
   const { productURL } = useParams();
   const productID = Number(productURL?.match(/(\d+)$/)![0]);
-  const goods = useAppSelector(selectGoods);
+  const goods = useAppSelector(selectFilteredState);
   const product = goods.filter((item) => item.barcode === +productID)[0];
 
   useEffect(() => {
