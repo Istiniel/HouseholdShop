@@ -8,6 +8,14 @@
     }
   }
 
+  @include maxQ(small) {
+    &:last-of-type {
+      .navLink {
+        padding-right: 3rem;
+      }
+    }
+  }
+
   @extend %transition;
 
   @include onHover() {
@@ -28,4 +36,9 @@
   @include font(1.4rem, 150%, 400);
 
   border-right: 2px dotted $primary-gray;
+
+  @include maxQ(small) {
+    border-right: none;
+    width: 100%;
+  }
 }

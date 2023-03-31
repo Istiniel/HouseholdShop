@@ -1,4 +1,5 @@
 .container {
+  padding: 2rem;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -9,6 +10,8 @@
 
   display: grid;
   place-items: center center;
+
+  overflow-y: scroll;
 }
 
 .form {
@@ -24,6 +27,14 @@
   @extend %flexcolumn;
   justify-content: space-between;
   gap: 1rem;
+
+  @include maxQ(small) {
+    min-width: 30rem;
+    width: 30rem;
+
+    position: absolute;
+    top: 5rem;
+  }
 }
 
 .buttons {
@@ -33,6 +44,10 @@
   justify-content: space-between;
   gap: 2rem;
   align-items: center;
+
+  @include maxQ(small) {
+    flex-direction: column;
+  }
 }
 
 .inputContainer {

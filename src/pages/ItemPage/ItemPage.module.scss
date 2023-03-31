@@ -8,12 +8,20 @@
 
   font-family: $font-sans;
   color: $primary-black;
+
+  @include maxQ(medium) {
+    padding: 0 0 5rem 0;
+
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .thumbContainer {
   display: grid;
   justify-items: center;
   align-items: center;
+  align-self: center;
 }
 
 .thumb {
@@ -34,11 +42,19 @@
   color: #1fd85d;
 }
 
-.prodcutTitle {
+.productTitle {
   @include font(3rem, 150%, 400);
 
   span {
     @include font(3rem, 150%, 800);
+  }
+
+  @include maxQ(small) {
+    @include font(1.6rem, 150%, 400);
+
+    span {
+      @include font(1.6rem, 150%, 800);
+    }
   }
 }
 
@@ -54,16 +70,24 @@
   display: flex;
   align-items: center;
   gap: 3.8rem;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+
+  hr {
+    width: 100%;
+
+    @include maxQ(small) {
+      width: 0%;
+    }
+  }
 }
 
 .price {
   @include font(3rem, 130%, 800);
-}
 
-.additionalInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include maxQ(small) {
+    @include font(2rem, 130%, 800);
+  }
 }
 
 .share,
@@ -91,7 +115,7 @@
 }
 
 .bonus {
-  width: 31.6rem;
+  width: 29rem;
   height: 7.7rem;
 
   @include font(1.2rem, 150%, 400);
@@ -105,10 +129,15 @@
   span {
     @include font(1.2rem, 150%, 700);
   }
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 }
 
 .priceList {
   padding: 3rem 3.75rem;
+  white-space: nowrap;
 
   @include font(1.4rem, 1.7rem, 700);
   gap: 1rem;
@@ -119,6 +148,10 @@
 
   @include onHover() {
     background-color: rgba($color: $primary-yellow, $alpha: 0.2);
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
   }
 }
 

@@ -5,6 +5,10 @@
   align-items: center;
 
   border-bottom: 2px dotted $primary-gray;
+
+  @include maxQ(medium) {
+    flex-direction: column;
+  }
 }
 
 .thumbContainer {
@@ -15,7 +19,9 @@
 }
 
 .thumb {
+  flex: 1 0 auto;
   height: 19.1rem;
+  object-fit: contain;
 }
 
 .description {
@@ -36,6 +42,10 @@
 
 .productName {
   @include font(3rem, 3.6rem, 700);
+
+  @include maxQ(medium) {
+    @include font(2rem, 2.4rem, 500);
+  }
 }
 
 .productDescription {
@@ -43,8 +53,19 @@
 }
 
 .price {
-  width: 20rem;
+  padding: 0 2rem;
+  width: max-content;
   @include font(3rem, 130%, 700);
+
+  border-left: 2px dotted $primary-gray;
+  border-right: 2px dotted $primary-gray;
+
+  @include maxQ(medium) {
+    width: 12rem;
+    padding: 0;
+
+    @include font(1.6rem, 130%, 700);
+  }
 }
 
 .removeProduct {
@@ -61,5 +82,23 @@
 
   @include onHover() {
     background-color: $primary-gray;
+  }
+
+  @include maxQ(medium) {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.interactionBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+
+  @include maxQ(medium) {
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 }

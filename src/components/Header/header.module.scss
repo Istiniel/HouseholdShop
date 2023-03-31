@@ -20,6 +20,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include maxQ(large) {
+    justify-content: center;
+  }
 }
 
 .bottomContainer {
@@ -41,6 +45,10 @@
 
   .contactItem:last-child {
     padding-left: 2rem;
+  }
+
+  @include maxQ(large) {
+    display: none;
   }
 }
 
@@ -69,6 +77,21 @@
   align-items: center;
 }
 
+.logo {
+  width: 15.6rem;
+  height: 6.6rem;
+}
+
+.iconLocation {
+  width: 2rem;
+  height: 2rem;
+}
+
+.iconEmail {
+  width: 1.8rem;
+  height: 1.4rem;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -89,6 +112,10 @@
 
   padding-right: 2.5rem;
   border-right: 2px dotted $primary-gray;
+
+  @include maxQ(large) {
+    display: none;
+  }
 }
 
 .callbackInfo {
@@ -133,6 +160,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 2.4rem;
+}
+
+.cartIcon {
+  width: 4.1rem;
+  height: 2.9rem;
 }
 
 .cartInfo {
@@ -184,4 +216,11 @@
   top: 0;
 
   transform: translate(-1rem, 1rem);
+}
+
+.priceListButton {
+  @include maxQ(large) {
+    background-color: red;
+    display: none;
+  }
 }

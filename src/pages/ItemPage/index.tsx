@@ -13,6 +13,7 @@ import iconShare from '../../assets/icons/icon_share.svg';
 import Button from '../../components/Button';
 import Counter from '../../components/Counter';
 import { addItemToCart } from '../../redux/features/cart/cartSlice';
+import { useMediaQueriesMinWidth } from './../../hooks/useMediaQueries';
 
 const ItemPage = () => {
   const [itemCount, setItemCount] = useState<number>(1);
@@ -49,6 +50,8 @@ const ItemPage = () => {
     dispatch(addItemToCart({ ...product, count: itemCount }));
   }
 
+  const { isSmall } = useMediaQueriesMinWidth();
+
   return (
     <div className={st.product}>
       <div className="wrapper">
@@ -58,22 +61,28 @@ const ItemPage = () => {
           </div>
           <div className={st.info}>
             <p className={st.presence}>В наличии</p>
-            <h2 className={st.prodcutTitle}>
+            <h2 className={st.productTitle}>
               <span>{product?.brand} </span>
               {product?.title}
             </h2>
-            <div className={st.measure}>
-              <img src={measureIcon} alt="measure_type" />
-              <p>{measureValue}</p>
-            </div>
+            {isSmall && (
+              <div className={st.measure}>
+                <img src={measureIcon} alt="measure_type" />
+                <p>{measureValue}</p>
+              </div>
+            )}
             <div className={st.cartSection}>
               <div className={st.price}>{product?.price} ₸</div>
               <Counter count={itemCount} setCount={setItemCount} />
-              <Button padding="1rem 2rem" color="orange" callback={addItemsToCart}>
-                В КОРЗИНУ <img src={iconToCart} alt="icon_tocart" />
+              <Button
+                padding="1rem 2rem"
+                color="orange"
+                callback={addItemsToCart}
+                className={st.toCartButton}
+              >
+                В корзину <img src={iconToCart} alt="icon_tocart" />
               </Button>
-            </div>
-            <div className={st.additionalInfo}>
+              <hr />
               <a href="#" className={st.share}>
                 <img src={iconShare} alt="icon_share" />
               </a>

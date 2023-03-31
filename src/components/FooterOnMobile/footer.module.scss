@@ -5,38 +5,41 @@
 .logo {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(345deg)
     brightness(103%) contrast(102%);
+
+  width: 9.7rem;
+  height: 4.1rem;
 }
 
 .container {
   padding-top: 7.1rem;
   padding-bottom: 7.1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 
-  @include maxQ(medium) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content max-content;
+  gap: 1rem 1rem;
+  justify-items: center;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr max-content;
-    gap: 4rem 2rem;
-    justify-items: center;
+  @include maxQ(small) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 
 .subsribe {
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
   max-width: 32rem;
   @extend %flexcolumn;
   align-items: flex-start;
-  gap: 4.5rem;
+  gap: 1.5rem;
 
   font-family: $font-sans;
   color: $primary-white;
 
   p {
-    @include font(1.6rem, 150%, 400);
+    @include font(1.2rem, 150%, 400);
     white-space: pre-line;
   }
 
@@ -65,7 +68,6 @@
 
   font-family: $font-sans;
   color: $primary-white;
-  white-space: nowrap;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -73,18 +75,17 @@
   }
 
   a {
-    @include font(1.4rem, 150%, 400);
+    @include font(1.2rem, 150%, 400);
   }
 }
 
-.pricelist {
+.messengers {
   @extend %flexcolumn;
   align-items: flex-start;
   gap: 2rem;
 
   font-family: $font-sans;
   color: $primary-white;
-  white-space: nowrap;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -92,18 +93,35 @@
   }
 
   h4 {
-    @include font(1.4rem, 150%, 400);
+    @include font(1.2rem, 150%, 400);
   }
 }
 
-.messengers {
+.messengersContainer {
+  justify-self: center;
+  align-self: center;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+
+  h4 {
+    font-family: $font-sans;
+    color: $primary-white;
+    @include font(1.4rem, 150%, 400);
+  }
+
+  .messengers {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
-.contacts {
+.contactsContainer {
   @extend %flexcolumn;
   align-items: flex-start;
   gap: 2rem;
@@ -138,6 +156,11 @@
   }
 }
 
+.contacts {
+  @extend %flexcolumn;
+  gap: 2rem;
+}
+
 .phoneBlock {
   @extend %flexcolumn;
   justify-content: space-between;
@@ -156,4 +179,17 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+.priceList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceListButton {
+  padding-right: 1rem;
+  display: flex;
+  gap: 1rem;
 }

@@ -4,15 +4,19 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 import BreadCrumbs from './../BreadCrumbs/index';
-import st from './SharedLayout.module.scss';
+import { useMediaQueriesMinWidth } from '../../hooks/useMediaQueries';
+import HeaderOnMobile from '../HeaderOnMobile';
+import FooterOnMobile from '../FooterOnMobile';
 
 const SharedLayout = () => {
+  const { isSmall } = useMediaQueriesMinWidth();
+
   return (
     <>
-      <Header />
+      {isSmall ? <Header /> : <HeaderOnMobile />}
       <BreadCrumbs />
       <Outlet />
-      <Footer />
+      {isSmall ? <Footer /> : <FooterOnMobile />}
     </>
   );
 };

@@ -12,3 +12,25 @@
   min-width: 28rem;
   gap: 4rem;
 }
+
+.sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: $font-sans;
+  color: $primary-black;
+
+  @include maxQ(small) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  h3 {
+    @include font(1.6rem, 150%, 500);
+  }
+
+  select {
+    @include font(1.6rem, 150%, 400);
+  }
+}

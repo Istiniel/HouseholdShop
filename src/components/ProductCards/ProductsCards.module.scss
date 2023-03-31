@@ -8,11 +8,18 @@
 }
 
 .container {
-  flex: 1 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(29rem, 1fr));
+  grid-template-columns: repeat(3, 29rem);
   row-gap: 2.1rem;
   column-gap: 2.1rem;
+
+  @media (max-width: 1350px) {
+    grid-template-columns: repeat(2, 29rem);
+  }
+
+  @include maxQ(medium) {
+    grid-template-columns: 29rem;
+  }
 }
 
 .pagination {

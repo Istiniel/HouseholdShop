@@ -50,8 +50,9 @@
   row-gap: 2rem;
   column-gap: 2rem;
 
-  @include maxQ(medium) {
-    grid-template-columns: 1fr;
+  @include maxQ(small) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

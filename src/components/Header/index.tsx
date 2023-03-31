@@ -16,6 +16,7 @@ import Button from '../Button';
 import { useAppSelector } from '../../redux/hooks';
 import { selectSummary } from '../../redux/features/cart/cartSlice';
 import SearchBar from '../SearchBar/index';
+import { useMediaQueriesMinWidth } from '../../hooks/useMediaQueries';
 
 const Header: React.FC = () => {
   const summaryPrice = useAppSelector(selectSummary);
@@ -27,6 +28,8 @@ const Header: React.FC = () => {
     { link: 'contacts', title: 'Контакты' },
   ];
 
+  const { isExtraLarge, isLarge, isMedium, isSmall, isExtraSmall } = useMediaQueriesMinWidth();
+
   return (
     <header className={st.header}>
       <div className={st.headerTop}>
@@ -34,7 +37,7 @@ const Header: React.FC = () => {
           <div className={st.topContainer}>
             <div className={st.contactBlock}>
               <div className={st.contactItem}>
-                <a href="#">
+                <a href="#" className={st.iconLocation}>
                   <img src={locationLogo} alt="icon_location" />
                 </a>
                 <div>
@@ -43,8 +46,8 @@ const Header: React.FC = () => {
                 </div>
               </div>
               <div className={st.contactItem}>
-                <a href="#">
-                  <img src={emailLogo} alt="icon_location" />
+                <a href="#" className={st.iconEmail}>
+                  <img src={emailLogo} alt="icon_email" />
                 </a>
                 <div>
                   <h3>opt.sultan@mail.ru</h3>
@@ -61,7 +64,7 @@ const Header: React.FC = () => {
       <div className={st.headerBottom}>
         <div className={st.wrapper}>
           <div className={st.bottomContainer}>
-            <Link to="/">
+            <Link to="/" className={st.logo}>
               <img src={Logo} alt="logo__icon" />
             </Link>
             <Link to="/products">
@@ -79,11 +82,13 @@ const Header: React.FC = () => {
                 </div>
                 <img src={callbackImage} alt="callback_img" />
               </div>
-              <Button color="orange" padding="2.1rem 4.4rem">
-                Прайс-лист <img src={pricelistLogo} alt="card__logo" />
-              </Button>
+              {isLarge && (
+                <Button color="orange" padding="2.1rem 4.4rem" className={st.priceListButton}>
+                  Прайс-лист <img src={pricelistLogo} alt="card__logo" />
+                </Button>
+              )}
               <div className={st.cart}>
-                <Link to="/cart">
+                <Link to="/cart" className={st.cartIcon}>
                   <img src={cartImage} alt="card_img" />
                 </Link>
                 <div className={st.cartInfo}>

@@ -54,16 +54,18 @@ const CartItem: React.FC<CartItemType> = (item) => {
         <h2 className={st.productName}>{getProductName()}</h2>
         <p className={st.productDescription}>{product.description}</p>
       </div>
-      <Counter
-        count={itemCount}
-        setCount={setItemCount}
-        decreaseCount={() => dispatch(decreaseCount(product))}
-        increaseCount={() => dispatch(increaseCount(product))}
-      />
-      <h2 className={st.price}>{(product.price * product.count).toFixed(2)} ₸</h2>
-      <button className={st.removeProduct} onClick={() => dispatch(deleteItemFromCart(product))}>
-        <img src={iconRemove} alt="remove_icon" />
-      </button>
+      <div className={st.interactionBlock}>
+        <Counter
+          count={itemCount}
+          setCount={setItemCount}
+          decreaseCount={() => dispatch(decreaseCount(product))}
+          increaseCount={() => dispatch(increaseCount(product))}
+        />
+        <h2 className={st.price}>{(product.price * product.count).toFixed(2)} ₸</h2>
+        <button className={st.removeProduct} onClick={() => dispatch(deleteItemFromCart(product))}>
+          <img src={iconRemove} alt="remove_icon" />
+        </button>
+      </div>
     </div>
   );
 };

@@ -3,9 +3,19 @@
 }
 
 .content {
+  width: 100%;
   padding-bottom: 2rem;
   display: flex;
   gap: 10.8rem;
+
+  @media (max-width: 1350px) {
+    gap: 5rem;
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .topSection {
@@ -17,7 +27,12 @@
   color: $primary-black;
 
   h2 {
+    text-transform: uppercase;
     @include font(4rem, 120%, 500);
+
+    @include maxQ(small) {
+      @include font(2rem, 120%, 500);
+    }
   }
 }
 
@@ -42,7 +57,16 @@
   padding: 2.5rem 0 3rem 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+
+  @media (max-width: 1350px) {
+    justify-content: flex-start;
+  }
+
+  @include maxQ(medium) {
+    display: none;
+  }
 }
 
 .tag {

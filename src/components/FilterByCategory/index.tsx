@@ -10,6 +10,7 @@ const FilterByCategory = () => {
 
   function filterCardsByCategory(e: React.SyntheticEvent) {
     let tag = (e.target as HTMLButtonElement)?.textContent as string;
+
     tag = tag.replace('\n', '');
 
     if (tag === activeTag) {
@@ -24,7 +25,11 @@ const FilterByCategory = () => {
     <div className={st.container}>
       <h2>Категория</h2>
       {PRODUCT_TAGS.map((tag) => (
-        <h3 key={tag} className={st.tag} onClick={filterCardsByCategory}>
+        <h3
+          key={tag}
+          className={st.tag + ' ' + (activeTag === tag.replace('\n', '') ? st.active : '')}
+          onClick={filterCardsByCategory}
+        >
           {tag}
         </h3>
       ))}

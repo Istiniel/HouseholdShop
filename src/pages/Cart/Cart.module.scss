@@ -22,9 +22,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include maxQ(medium) {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+  }
 }
 
 .totalPrice {
+  width: 20rem;
+  text-align: center;
   @include font(3rem, 130%, 700);
 }
 

@@ -10,6 +10,10 @@
   padding: 0 1.5rem;
   border-radius: 0.3rem;
 
+  @include maxQ(small) {
+    padding-left: 0;
+  }
+
   font-family: $font-sans;
   color: $primary-black;
   @include font(1.2rem, 80%, $font-weight-semibold);

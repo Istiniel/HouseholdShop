@@ -13,6 +13,10 @@
   font-family: $font-sans;
   color: $primary-black;
   @include font(2rem, 130%, 500);
+
+  @include maxQ(small) {
+    flex-direction: column;
+  }
 }
 
 .link {
