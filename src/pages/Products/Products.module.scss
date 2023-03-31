@@ -1,3 +1,5 @@
+
+
 .products {
   background-color: $primary-white;
 }
@@ -25,6 +27,11 @@
 
   font-family: $font-sans;
   color: $primary-black;
+
+  @include maxQ(small) {
+    margin-right: 3.5rem;
+    justify-content: center;
+  }
 
   h2 {
     text-transform: uppercase;

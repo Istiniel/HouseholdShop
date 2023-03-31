@@ -1,3 +1,9 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .title {
   font-family: $font-sans;
   color: $primary-black;
@@ -5,8 +11,31 @@
   text-transform: uppercase;
 }
 
+.iconDropDown {
+  transition: transform ease-out 0.35s;
+
+  @include onHover() {
+    cursor: pointer;
+  }
+}
+
+.active {
+  animation: rotate 0.35s ease-out;
+  transform: rotate(180deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 .container {
-  margin-top: 2rem;
+  margin: 2rem auto 0 auto;
 
   @extend %flexcolumn;
   min-width: 28rem;
@@ -22,8 +51,10 @@
   color: $primary-black;
 
   @include maxQ(small) {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 1rem;
   }
 
   h3 {
