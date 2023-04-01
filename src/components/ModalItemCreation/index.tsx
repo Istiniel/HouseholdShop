@@ -51,7 +51,7 @@ const ModalItemCreation: React.FC<ModalItemCreationProps> = ({
       brand: brand.current!.value,
       description: description.current!.value,
       price: +price.current!.value,
-      tags: tags as (typeof PRODUCT_TAGS)[number][],
+      tags: tags.map((tag) => tag.replace('\n', '')) as (typeof PRODUCT_TAGS)[number][],
       id: originProduct ? originProduct.id : randomNumber(100, 5123),
     };
 
