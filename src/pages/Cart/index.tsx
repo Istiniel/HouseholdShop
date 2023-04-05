@@ -47,7 +47,12 @@ const Cart = () => {
                 return <CartItem key={item.id} {...item} />;
               })}
               <div className={st.purchaseBlock}>
-                <Button padding="2.1rem 3.75rem" color="orange" callback={purchase}>
+                <Button
+                  padding="2.1rem 3.75rem"
+                  color="orange"
+                  callback={purchase}
+                  role="purchaseButton"
+                >
                   Оформить заказ
                 </Button>
                 <h3 className={st.totalPrice}>{totalPrice} ₸</h3>

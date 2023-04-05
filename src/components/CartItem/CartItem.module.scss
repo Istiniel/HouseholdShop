@@ -54,7 +54,8 @@
 
 .price {
   padding: 0 2rem;
-  width: max-content;
+  width: 27rem;
+
   @include font(3rem, 130%, 700);
 
   border-left: 2px dotted $primary-gray;

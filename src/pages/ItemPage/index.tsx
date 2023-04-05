@@ -79,6 +79,7 @@ const ItemPage = () => {
                 color="orange"
                 callback={addItemsToCart}
                 className={st.toCartButton}
+                role="buttonToCart"
               >
                 В корзину <img src={iconToCart} alt="icon_tocart" />
               </Button>

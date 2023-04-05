@@ -64,7 +64,12 @@ const ProductCard: React.FC<GoodsType> = (props) => {
         </h3>
         <div className={st.toCard}>
           <h3>{`${props.price} ₸`}</h3>
-          <Button padding="1rem 2rem" color="orange" callback={addItemsToCart}>
+          <Button
+            padding="1rem 2rem"
+            color="orange"
+            callback={addItemsToCart}
+            role={'buttonToCart'}
+          >
             В КОРЗИНУ <img src={iconToCart} alt="icon_tocart" />
             {product && <p className={st.itemCount}>в корзине: {product.count} шт.</p>}
           </Button>

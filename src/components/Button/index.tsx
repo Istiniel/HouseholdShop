@@ -9,6 +9,7 @@ type ButtonType = {
   padding?: string;
   className?: string;
   callback?: (e: React.SyntheticEvent) => void;
+  role?: string;
 };
 
 const Button: React.FC<ButtonType> = (props) => {
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonType> = (props) => {
       className={`${className ? className : ''} ${classes} `}
       style={{ padding: padding ? padding : '2.4rem 5rem' }}
       onClick={callback}
+      role={props.role ? props.role : ''}
     >
       {children}
     </button>

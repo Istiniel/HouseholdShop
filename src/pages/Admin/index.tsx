@@ -51,7 +51,11 @@ const Admin = () => {
               <span>Добавить товар</span>
             </h3>
             <div className={st.buttonsContainer}>
-              <button className={st.createButton} onClick={() => setIsModalActive(true)}>
+              <button
+                className={st.createButton}
+                onClick={() => setIsModalActive(true)}
+                role="addItemAdmin"
+              >
                 <img src={iconAdd} alt="icon_delete" className={st.icon} />
               </button>
             </div>

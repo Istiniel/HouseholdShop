@@ -46,6 +46,7 @@ const Header: React.FC = () => {
           </div>
           <div className={st.topContainer}>
             <button
+              role="burgerMenuButton"
               className={st.burgerButton}
               onClick={(e: React.SyntheticEvent) => {
                 setMenuActive(!menuActive);

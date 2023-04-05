@@ -24,6 +24,7 @@ const DropDownTagsSelect: React.FC<DropDownProps> = ({ options, type, callback }
 
   return (
     <div
+      role="dropDownHeader"
       ref={dropContent}
       className="dropDown"
       onMouseEnter={

@@ -20,13 +20,16 @@ const Counter: React.FC<CounterProps> = ({ count, setCount, increaseCount, decre
       >
         -
       </button>
-      <h3 className={st.count}>{count}</h3>
+      <h3 className={st.count} role="counterValue">
+        {count}
+      </h3>
       <button
         className={st.increase}
         onClick={() => {
           setCount((prevState) => (prevState += 1));
           increaseCount && increaseCount();
         }}
+        role="buttonAddOne"
       >
         +
       </button>

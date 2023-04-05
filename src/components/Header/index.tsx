@@ -28,7 +28,7 @@ const Header: React.FC = () => {
     { link: 'contacts', title: 'Контакты' },
   ];
 
-  const { isExtraLarge, isLarge, isMedium, isSmall, isExtraSmall } = useMediaQueriesMinWidth();
+  const { isLarge } = useMediaQueriesMinWidth();
 
   return (
     <header className={st.header}>
