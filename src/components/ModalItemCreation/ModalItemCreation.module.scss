@@ -26,7 +26,7 @@
 
   @extend %flexcolumn;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 
   @include maxQ(small) {
     min-width: 30rem;
@@ -51,6 +51,7 @@
 }
 
 .inputContainer {
+  position: relative;
   @extend %flexcolumn;
   align-items: flex-start;
   gap: 0.5rem;
@@ -67,6 +68,18 @@
     color: $primary-black;
     @include font(1.3rem, 130%, 400);
   }
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+
+  transform: translateY(115%);
+
+  font-family: $font-sans;
+  color: tomato;
+  @include font(1.2rem, 130%, 500);
+  white-space: nowrap;
 }
 
 .input {
@@ -105,4 +118,8 @@
   @include onHover() {
     cursor: pointer;
   }
+}
+
+.invalid {
+  outline: 2px solid tomato;
 }
